@@ -1,0 +1,66 @@
+<view class="">
+  <!-- 评论列表区域 -->
+  <scroll-view class="" style="height:{{commentListHeight}}" scroll-y bindscrolltolower="reachBottom" enhanced>
+    <!-- 评论之前的内容 -->
+    <slot></slot>
+    <!-- 头部 -->
+    <view class="header">评论区 ({{total}})</view>
+    <view class="commentItem commentList" wx:for="{{commentList}}" wx:key="index">
+      <image class="avatar" src="{{item.user.avatarUrl}}?param=90y90" lazy-load></image>
+      <view class="commentInfo">
+        <view class="creatorInfo">
+          <view class="nickName">{{item.user.nickname}}</view>
+          <view class="createTime">{{item.time}}</view>
+        </view>
+        <view class="commentContent">{{item.content}}</view>
+        <view class="response" bindtap="showList" data-commentid="{{item.commentId}}">
+          {{item.showFloorComment.replyCount?item.showFloorComment.replyCount:'0'}}条回复
+        </view>
+      </view>
+    </view> 
+    <view class="loadingContainer">
+      <mp-loading show="{{isLoad}}"></mp-loading>
+    </view>
+    <view class="commentTip" wx:if="{{isLoad==false}}">下面没有评论了哦</view>
+  </scroll-view>
+  <!-- <view class="placeholder"></view> -->
+  <!-- 遮罩层 -->
+  <view class="mask {{isFloorCommentListShow?'showMask':''}}" bindtap="hideList"></view>
+  <!-- 楼层评论 -->
+  <view class="floorCommentContainer {{isFloorCommentListShow?'showfloorCommentContainer':''}}">
+    <view class="floorContainerHeader">
+      <text class="iconfont icon-fanhui" bindtap="hideList"></text>
+      <text class="reply">回复 ({{floorComment.totalCount?floorComment.totalCount:'0'}})</text>
+    </view>
+    <scroll-view class="floorCommentScroll" scroll-y bindscrolltolower="reachFloorBottom">
+      <!-- 原评论 -->
+      <view class="comment origin" wx:if="{{floorComment.ownerComment}}">
+        <image class="avatar" src="{{floorComment.ownerComment.user.avatarUrl}}?param=90y90" lazy-load></image>
+        <view class="commentInfo">
+          <view class="creatorInfo">
+            <view class="nickName">{{floorComment.ownerComment.user.nickname}}</view>
+            <view class="createTime">{{floorComment.ownerComment.time}}</view>
+          </view>
+          <view class="commentContent">{{floorComment.ownerComment.content}}</view>
+        </view>
+      </view>
+      <view class="separate" wx:if="{{floorComment.ownerComment}}"></view>
+      <!-- 楼层评论 -->
+      <view class="listHeader">全部回复</view>
+      <view class="comment" wx:for="{{floorComment.comments}}" wx:key="index">
+        <image class="avatar" src="{{item.user.avatarUrl}}?param=90y90" lazy-load></image>
+        <view class="commentInfo">
+          <view class="creatorInfo">
+            <view class="nickName">{{item.user.nickname}}</view>
+            <view class="createTime">{{item.time}}</view>
+          </view>
+          <view class="commentContent">{{item.content}}</view>
+        </view>
+      </view>
+      <view class="floorLoadingContainer">
+        <mp-loading show="{{isFloorLoad}}"></mp-loading>
+      </view>
+      <view class="tip" wx:if="{{isFloorLoad==false}}">下面没有评论了哦</view>
+    </scroll-view>
+  </view>
+</view>

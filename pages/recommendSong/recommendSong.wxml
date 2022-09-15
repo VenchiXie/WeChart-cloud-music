@@ -1,0 +1,33 @@
+<navigation-bar></navigation-bar>
+<view class="recommendSongContainer" bindtouchend="handleTouchEnd">
+    <!-- 头部 -->
+    <view class="header">
+        <text class="title {{isScroll?'titleShow':''}}" style="margin-top:calc({{barHeight}}px);">
+            Recommend
+        </text>
+        <image class="{{isScroll?'imageBlur':''}}" src="/static/images/recommendSong/taylor.jpg" mode="widthFix" lazy-load></image>
+        <view class="data {{isScroll?'dataHidden':''}}">
+            <text class="day">{{day}}</text>
+            <text class="month">/{{month}}</text>
+        </view>
+    </view>
+    <!-- 列表区域 -->
+    <view class="listContainer">
+        <view class="listHeader">
+            <text>播放全部</text>
+            <text class="changeMore">多选</text>
+        </view>
+        <scroll-view scroll-y="{{isScroll}}" class="listScroll" wx:if="{{recommendList.length!==0}}">
+            <view class="scrollItem" wx:for="{{recommendList}}" wx:key="id" data-index="{{index}}" data-song="{{item.id}}" bindtap="toSongDetail">
+                <image src="{{item.al.picUrl}}?param=80y80" lazy-load></image>
+                <view class="musicInfo">
+                    <text class="musicName">{{item.name}}</text>
+                    <text class="author">{{item.artists[0].name}}</text>
+                </view>
+                <text class="iconfont icon-gengduo"></text>
+            </view>
+        </scroll-view>
+        <view class="tip">推荐歌曲列表加载中...</view>
+    </view>
+</view>
+<bottomControl></bottomControl>

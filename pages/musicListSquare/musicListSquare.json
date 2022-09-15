@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "bottomControl": "/components/bottomControl/bottomControl",
+    "mp-loading": "weui-miniprogram/loading/loading",
+    "musicListCard": "/components/musicListCard/musicListCard"
+  },
+  "navigationBarTitleText": "歌单广场"
+}

@@ -1,0 +1,11 @@
+<!-- 音乐列表滚动  -->
+<scroll-view class="musicListScroll" scroll-y enable-flex bindscrolltolower="reachBottom" style="margin-top:{{cardMarginTop}};height:{{cardHeight}}">
+  <view class="listItem" wx:for="{{musicList}}" bindtap="toMusicList" data-musiclistid="{{item.id}}" wx:key="index">
+    <image class="cover" src="{{item.coverImgUrl?item.coverImgUrl:item.picUrl}}?param=300y300" lazy-load></image>
+    <text class="title">{{item.name}}</text>
+  </view>
+  <!-- loading组件 -->
+  <view class="loadingContainer" wx-if="{{isMore}}">
+    <mp-loading show="{{isMore}}"></mp-loading>
+  </view>
+</scroll-view>

@@ -1,0 +1,151 @@
+/* pages/recommendSong/recommendSong.wxss */
+
+.header {
+    width: 100%;
+    height: 500rpx;
+    position: relative;
+}
+
+.title {
+    position: fixed;
+    width: 100%;
+    /* margin-top: 7vh; */
+    text-align: center;
+    line-height: 40rpx;
+    color: white;
+    z-index: 100;
+    opacity: 0;
+    transition: all 0.5s linear;
+}
+
+.titleShow {
+    opacity: 1;
+    transition: all 0.5s linear;
+}
+
+
+.header image {
+    width: 130%;
+    transform: translate(-8%,0%);
+    filter: blur(0px);
+    transition: filter 0.5s linear;
+    /* z-index: -100; */
+    /* height: 100%; */
+}
+
+.header .imageBlur {
+    filter: blur(5px);
+    transition: filter 0.5s linear;
+}
+
+.header .data {
+    position: absolute;
+    bottom: 15%;
+    left: 2%;
+    width: 200rpx;
+    height: 100rpx;
+    color:white;
+    line-height: 100rpx;
+    text-align: center;
+    /* background-color: rgba(0,0,0,0.3); */
+    border-radius: 20rpx;
+    opacity: 1;
+    transition: all 0.5s linear;
+}
+
+.header .dataHidden{
+    opacity: 0;
+    transition: all 0.5s linear;
+}
+
+.day {
+    font-size: 70rpx;
+    font-weight: 500;
+}
+
+.month {
+    font-size: 50rpx;
+}
+
+/* 列表区域 */
+.listContainer {
+    padding: 0 20rpx;
+    border-radius: 20rpx;
+    transform: translateY(-40rpx);
+    background-color: #fff;
+}
+
+
+.listHeader{
+    height: 80rpx;
+    line-height: 80rpx;
+}
+
+.changeMore {
+    float: right;
+}
+
+/* 滚动区域 */
+.listContainer{
+    height: calc(80vh - 40rpx);
+}
+
+.listScroll {
+    height: calc(100% - 40rpx);
+}
+
+.scrollItem {
+    display: flex;
+    position: relative;
+    margin: 40rpx 0;
+}
+
+.scrollItem image{
+    height: 80rpx;
+    width: 80rpx;
+    border-radius: 8rpx;
+}
+
+.musicInfo {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20rpx;
+    padding: 2rpx;
+    flex: 1;
+}
+
+.musicInfo text {
+    height: 40rpx;
+    line-height: 40rpx;
+    max-width: 500rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.musicName {
+    font-size: 30rpx;
+}
+
+.author {
+    font-size: 24rpx;
+    color:#9f9f9f;
+}
+
+.icon-gengduo {
+    position: absolute;
+    right: 0;
+    line-height: 80rpx;
+    width: 80rpx;
+    height: 80rpx;
+    text-align: center;
+    color:#9f9f9f;
+}
+
+.tip {
+    font-size: 28rpx;
+    color: #aaa;
+    width: 100%;
+    margin-top: 50rpx;
+    text-align: center;
+  }

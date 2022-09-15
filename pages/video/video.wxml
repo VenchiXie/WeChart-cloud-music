@@ -1,0 +1,34 @@
+<view class="videoContainer">
+    <!-- 导航区域 -->
+    <scroll-view scroll-x class="navScroll" enable-flex scroll-into-view="t{{pageNum>3?pageNum-2:0}}" scroll-with-animation>
+        <view class="navItem" wx:for="{{videoGroupList}}" wx:key="index" bindtap="changeNav" id="t{{index}}" data-page="{{index}}">
+            <view class="navContent {{index==pageNum?'active':''}}">{{item.name}}</view>
+        </view>
+    </scroll-view>
+    <!-- 头部区域 -->
+    <view class="header">
+        <view class="search" bindtap="toSearch">搜索框</view>
+    </view>
+    <!-- 视频列表区域 -->
+    <swiper class="videoListSwiper" current="{{pageNum}}" bindchange="pageChange">
+        <swiper-item wx:for="{{allVideoList}}" wx:key="index">
+            <scroll-view class="videoItemContainerScroll" wx:if="{{allVideoList[pageNum].length!==0}}" scroll-y refresher-enabled bindrefresherrefresh="handleRefresher" bindscrolltolower="handleToLower" refresher-triggered="{{isTriggered}}">
+                <view class="videoItemContainer">
+                    <view class="videoItem" wx:for="{{item}}" wx:key="index" wx:for-item="video" bindtap="playVideo" data-videotype="{{video.type}}" data-videovid="{{video.type==1?video.data.vid:video.data.id}}">
+                        <!-- <video src="{{item.data.urlInfo.url}}"></video> -->
+                        <image src="{{video.data.coverUrl}}?param=320y180" mode="aspectFit" lazy-load></image>
+                        <view class="textContainer">
+                            {{video.type==1?video.data.title:video.data.name+' - '+video.data.artists[0].name}}
+                        </view>
+                    </view>
+                    <!-- loading组件 -->
+                    <view class="loadingContainer">
+                        <mp-loading></mp-loading>
+                    </view>
+                </view>
+            </scroll-view>
+            <view class="tip" wx:else>视频数据正在加载...</view>
+        </swiper-item>
+    </swiper>
+    <bottomControl></bottomControl>
+</view>

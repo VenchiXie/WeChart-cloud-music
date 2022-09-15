@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "musicListCard": "/components/musicListCard/musicListCard",
+    "bottomControl": "/components/bottomControl/bottomControl"
+  },
+  "navigationBarTitleText": "排行榜"
+}

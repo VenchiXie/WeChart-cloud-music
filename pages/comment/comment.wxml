@@ -1,0 +1,3 @@
+<view class="commentContainer">
+    <commentList musicId="{{musicId}}"></commentList>
+</view> 

@@ -1,0 +1,22 @@
+/* pages/comment/comment.wxss */
+page {
+    height: 100%;
+    color: #343434;
+}
+
+
+.header {
+    height: 50rpx;
+    width: 100%;
+    line-height: 50rpx;
+    font-size: 28rpx;
+    font-weight: 600;
+    color:#1f1f1f;
+    padding:30rpx 40rpx 10rpx;
+}
+
+.floorContainerHeader .icon-fanhui {
+    color: #313131;
+    font-size: 40rpx;
+    margin-right: 15rpx;
+}

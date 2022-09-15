@@ -1,0 +1,20 @@
+<video src="{{videoUrl}}" vslide-gesture play-btn-position="center" enable-play-gesture poster="{{videoInfo.coverUrl}}"></video>
+<commentList commentListHeight="65vh" resourceType="{{videoType==1?'video':'mv'}}" musicId="{{videoId}}">
+    <view class="card">
+        <view class="creator">
+            <image class="avatar" src="{{videoType==1?videoInfo.creator.avatarUrl:videoInfo.artists[0].img1v1Url}}"></image>
+            <view class="nickName">
+                {{videoType==1?videoInfo.creator.nickname:videoInfo.artists[0].name}}
+            </view>
+            <button class="item btn" open-type="share">
+                <text class="iconfont icon-Group-"></text>
+            </button>
+        </view>
+        <view class="videoInfo">
+            <view class="title">
+                {{videoType==1?videoInfo.title:videoInfo.name+' - '+ videoInfo.artistName}}
+            </view>
+            <view class="desp">{{videoInfo.description?videoInfo.description:''}}</view>
+        </view>
+    </view>
+</commentList>

@@ -1,0 +1,44 @@
+/* pages/ranking/ranking.wxss */
+.title {
+  font-weight: bold;
+  font-size: 36rpx;
+  margin: 20rpx;
+}
+
+.rankingItem {
+  padding: 10rpx 20rpx;
+  display: flex;
+  position: relative;
+  font-size: 28rpx;
+}
+
+.rankingItem image{
+  width: 230rpx;
+  height: 230rpx;
+  border-radius: 20rpx;
+}
+
+.tracksItem {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: rgb(114, 114, 114);
+}
+
+.tracks {
+  width: calc(100vw - 280rpx);
+  box-sizing: border-box;
+  padding: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.tips {
+  position: absolute;
+  left: 40rpx;
+  bottom: 20rpx;
+  font-size: 24rpx;
+  color: white;
+  
+}

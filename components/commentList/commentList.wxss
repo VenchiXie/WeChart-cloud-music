@@ -1,0 +1,188 @@
+/* components/commentList/commentList.wxss */
+.header {
+  height: 50rpx;
+  width: 100%;
+  line-height: 50rpx;
+  font-size: 28rpx;
+  font-weight: 600;
+  color:#1f1f1f;
+  padding:30rpx 40rpx 10rpx;
+} 
+
+.commentList{
+    margin: 0 30rpx;
+}
+
+.placeholder{
+    margin: 0 30rpx;
+    height: calc(100vh - 90rpx);
+}
+
+.commentItem{
+    display: flex;
+    padding-top: 20rpx;
+}
+
+.avatar {
+    height: 85rpx;
+    width: 85rpx;
+    border-radius: 50%;
+}
+
+.commentInfo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20rpx;
+    padding-bottom:30rpx;
+    border-bottom: 1rpx solid #eee;
+}
+
+.creatorInfo {
+    margin-top: 8rpx;
+}
+
+.nickName {
+    font-size: 28rpx;
+    font-weight: 400;
+}
+
+.createTime {
+    color: #aaa;
+    font-size: 20rpx;
+}
+
+.commentContent {
+    font-size: 30rpx;
+    margin: 15rpx 0;
+    width: 85%;
+}
+
+.response {
+    color:#487491;
+    font-size: 24rpx;
+    height: 40rpx;
+}
+
+.loadingContainer {
+    width: 100%;
+    text-align: center;
+    margin: 50rpx 0 70rpx -30rpx;
+}
+
+.floorCommentContainer {
+    border-radius: 40rpx;
+    background-color: #fff;
+    width: 100%;
+    height: calc(100vh - 90rpx);
+    overflow: hidden;
+    transition: transform 0.3s linear;
+}
+
+.showfloorCommentContainer {
+    transform: translateY(calc(90rpx - 100vh));
+}
+
+.floorContainerHeader {
+    background-color: #fff;
+    height: 80rpx;
+    padding:0rpx 40rpx;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+.floorContainerHeader text{
+    height: 100%;
+    line-height: 100rpx;
+}
+
+.comment{
+    padding: 20rpx 30rpx 0;
+    display: flex;
+    background-color: #fff;
+}
+
+
+
+.comment .creatorInfo{
+    margin-top: 0;
+}
+
+.comment .commentContent {
+    font-size: 28rpx;
+    width: 100%;
+}
+
+.comment .commentInfo{
+    margin-right: 0;
+    border: none;
+}
+
+.floorCommentScroll {
+    height: calc(100vh - 90rpx);
+    margin-top: 20rpx;
+}
+
+.floorCommentScroll .commentInfo{
+    margin-bottom: 0rpx;
+    border-bottom:1rpx solid #eee;
+}
+
+.mask{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    background-color: rgba(0,0,0,0.3);
+    display: none;
+}
+
+.showMask {
+    display: block;
+}
+
+.floorLoadingContainer {
+    width: 100%;
+    text-align: center;
+    margin: 50rpx 0 150rpx -30rpx;
+}
+
+.tip {
+    color: #aaa;
+    font-size: 26rpx;
+    width: 100%;
+    text-align: center;
+    margin: -100rpx 0 150rpx -30rpx;
+}
+
+.separate {
+    background-color: #f8f8f8;
+    width: 100%;
+    height: 20rpx;
+}
+
+.listHeader {
+    font-size: 28rpx;
+    margin:10rpx 30rpx;
+}
+
+.floorCommentScroll .origin {
+    border: none;
+}
+
+.commentTip {
+    color:#aaa;
+    width: 100%;
+    font-size: 26rpx;
+    text-align: center;
+    margin: -30rpx 0 60rpx -30rpx;
+}
+
+.floorContainerHeader .icon-fanhui {
+    color: #313131;
+    font-size: 40rpx;
+    margin-right: 15rpx;
+}

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "musicListCard": "/components/musicListCard/musicListCard",
+    "bottomControl": "/components/bottomControl/bottomControl"
+  },
+  "navigationBarTitleText": "每日推荐歌单"
+}

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "mp-loading": "weui-miniprogram/loading/loading",
+    "commentList": "/components/commentList/commentList"
+  },
+  "disableScroll": true
+} 

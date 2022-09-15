@@ -1,0 +1,45 @@
+/* components/musicListCard.wxss */
+.musicListScroll {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.listItem {
+  width: 31%;
+  height: 340rpx;
+  line-height: 36rpx;
+}
+
+.listItem:nth-child(3n+2){
+  margin:0 3.5%;
+}
+
+.cover {
+  width: 100%;
+  height: calc(33vw - 20rpx);
+  border-radius: 20rpx;
+}
+
+.title {
+  font-size: 26rpx;
+  margin-top: 10rpx;
+  color: rgb(56, 56, 56);
+  word-break: break-all;
+  text-overflow: ellipsis;
+  display: -webkit-box; 
+  -webkit-box-orient: vertical; 
+  -webkit-line-clamp: 2; 
+  overflow: hidden;  /** 隐藏超出的内容 **/
+  text-align: left;
+}
+
+.loadingContainer {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 130rpx;
+  margin-top: 50rpx;
+}
